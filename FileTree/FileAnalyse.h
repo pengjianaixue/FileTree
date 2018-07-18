@@ -75,7 +75,6 @@ private:
 	bool FileRead(std::vector<FILE_WITHKIND> & filelist);
 	bool ReadDBFile(const std::string &FilePath);
 	bool ReadUDTFile(const std::string &FilePath);
-
 	bool ReadDBBlockFile(const std::string &FilePath);
 	bool ReadDataTypeFile(const std::string &FilePath);
 	bool ReadSCLFile(const std::string &FilePath);

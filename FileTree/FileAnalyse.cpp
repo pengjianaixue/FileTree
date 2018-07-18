@@ -133,7 +133,6 @@ bool CFileAnalyse::ReadDataTypeFile(const std::string & FilePath)
 
 		}
 		if (true == typeunitstart && true != typeunitend)
-		//if (true == typeunitstart )
 		{	
 
 			CXmlReSolver::UTF8_To_string(strtemp);
@@ -142,7 +141,7 @@ bool CFileAnalyse::ReadDataTypeFile(const std::string & FilePath)
 		}
 		if (true == typeunitstart  &&  true == typeunitend)
 		{	
-
+			unitnode = unitnode + "END_TYPE" + "\r\n";
 			m_datatypedata.push_back(unitnode);
 			unitnode.clear();
 			typeunitstart = false;

@@ -137,6 +137,7 @@ std::string CXmlReSolver::UTF8_To_string(const std::string & str)
 	int nLen = WideCharToMultiByte(CP_ACP, 0, pwBuf, -1, NULL, NULL, NULL, NULL);
 
 	char * pBuf = new char[nLen + 1];
+
 	memset(pBuf, 0, nLen + 1);
 
 	WideCharToMultiByte(CP_ACP, 0, pwBuf, nwLen, pBuf, nLen, NULL, NULL);
