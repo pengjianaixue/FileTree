@@ -118,7 +118,8 @@ bool CFileAnalyse::ReadDataTypeFile(const std::string & FilePath)
 	std::string unitnode;
 	std::ifstream dbfile;
 	dbfile.open(FilePath);
-	//dbfile.seekg(3,std::ios::beg);
+	//文件编码为utf-8 bom ，需要去除前三个字节
+	dbfile.seekg(3,std::ios::beg);
 	while (getline(dbfile, strtemp))
 	{
 		if (false == typeunitstart && strtemp.find("TYPE") != std::string::npos)
@@ -131,8 +132,10 @@ bool CFileAnalyse::ReadDataTypeFile(const std::string & FilePath)
 			typeunitend = true;
 
 		}
-		if (typeunitstart)
+		if (true == typeunitstart && true != typeunitend)
+		//if (true == typeunitstart )
 		{	
+
 			CXmlReSolver::UTF8_To_string(strtemp);
 			unitnode = unitnode + strtemp  +  "\r\n";
 
@@ -142,8 +145,8 @@ bool CFileAnalyse::ReadDataTypeFile(const std::string & FilePath)
 
 			m_datatypedata.push_back(unitnode);
 			unitnode.clear();
-			bool typeunitstart = false;
-			bool typeunitend = false;
+			typeunitstart = false;
+			typeunitend = false;
 		}
 	}
 
