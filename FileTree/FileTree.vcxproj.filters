@@ -30,7 +30,7 @@
     <ClInclude Include="DevDef.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\XmlResolver\XmlResolver\CXmlResolver.h">
+    <ClInclude Include="CXmlResolver.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -45,6 +45,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="FileAnalyse.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CXmlResolver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
